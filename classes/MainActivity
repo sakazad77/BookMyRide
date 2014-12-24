@@ -1,0 +1,82 @@
+package com.shaik.bookmyride;
+
+
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.MapView;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+
+public class MainActivity extends Activity implements OnClickListener {
+
+	Button bPickUp, bDrop, bNow, bLater, bHatchBack, bSedan, bSUV;
+	private GoogleMap mMap;
+	MapView map;
+	long lat, longi;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		initialize();
+		bPickUp.setOnClickListener(this);
+		bDrop.setOnClickListener(this);
+		bNow.setOnClickListener(this);
+		bLater.setOnClickListener(this);
+		bHatchBack.setOnClickListener(this);
+		bSedan.setOnClickListener(this);
+		bSUV.setOnClickListener(this);
+	}
+
+	private void initialize() {
+		// TODO Auto-generated method stub
+		bPickUp = (Button) findViewById(R.id.bPickUp);
+		bDrop = (Button) findViewById(R.id.bDrop);
+		bNow = (Button) findViewById(R.id.bNow);
+		bLater = (Button) findViewById(R.id.bLater);
+		bHatchBack = (Button) findViewById(R.id.bHatchBack);
+		bSedan = (Button) findViewById(R.id.bSedan);
+		bSUV = (Button) findViewById(R.id.bSUV);
+		mMap = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
+		
+		
+	}
+
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		switch (v.getId()) {
+		case R.id.bPickUp:
+
+			break;
+		case R.id.bDrop:
+			
+			break;
+		case R.id.bNow:
+			Intent i = new Intent("com.shaik.bookmyride.RIDEINFO");
+			startActivity(i);
+			break;
+		case R.id.bLater:
+
+			break;
+		case R.id.bHatchBack:
+
+			break;
+		case R.id.bSedan:
+
+			break;
+		case R.id.bSUV:
+
+			break;
+		}
+	}
+
+}
